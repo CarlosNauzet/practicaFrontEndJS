@@ -15,7 +15,7 @@ export const signUpUser = async (username, password) => {
 
   try {
     const response = await fetch(url, options);
-    const data = response.json();
+    const data = await response.json();
     return data;
   } catch (error) {
     throw error;

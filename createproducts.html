@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create products</title>
+  </head>
+  <body>
+    <form method="post" id="create-product-form">
+      <h3>Tell us about your new product</h3>
+      <div class="form-row">
+        <label for="productname">Product name</label>
+        <input
+          type="text"
+          id="productname"
+          name="productname"
+          minlength="4"
+          required
+        />
+      </div>
+
+      <div class="form-row">
+        <label for="productimage">Images</label>
+        <input
+          type="text"
+          id="productimage"
+          name="productimage"
+          minlength="4"
+        />
+      </div>
+
+      <div>
+        <label for="productdescription">Description</label>
+        <textarea
+          name="productdescription"
+          id="productdescription"
+          cols="30"
+          rows="10"
+          required
+        ></textarea>
+      </div>
+      <div>
+        <label for="productprice">Price</label>
+        <input
+          type="number"
+          id="productprice"
+          name="productprice"
+          min="0"
+          max="100000"
+          required
+        />
+      </div>
+      <div>
+        <label for="trade-in">Selling or Buying</label>
+        <select name="trade-in" id="trade-in">
+          <option value="sell">I want to sell</option>
+          <option value="buy">I want to buy</option>
+        </select>
+      </div>
+      <button type="submit" id="create-product-btn">Submit</button>
+    </form>
+
+    <script type="module" src="./createProduct/index.js"></script>
+  </body>
+</html>
