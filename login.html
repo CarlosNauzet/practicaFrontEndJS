@@ -3,16 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign Up</title>
+    <title>Log In</title>
   </head>
   <body>
-    <form method="post" id="signup-form">
-      <h3>Sign up now</h3>
+    <form method="post" id="login-form">
+      <h3>Log in now</h3>
       <label for="username">Name</label>
       <input
+        type="text"
         id="username"
         name="username"
-        type="text"
         minlength="3"
         maxlength="10"
         required
@@ -25,10 +25,10 @@
         minlength="4"
         required
       />
-      <button type="submit" id="signup-btn">Send</button>
-      <a href="./login.html">Already a member? Log In here</a>
+      <button type="submit" id="login-btn">Send</button>
+      <a href="signup.html">Not a member? Sign Up here</a>
     </form>
 
-    <script type="module" src="./SignUp/index.js"></script>
+    <script type="module" src="./LogIn/index.js"></script>
   </body>
 </html>
