@@ -6,6 +6,7 @@ export const productListingController = async (productListing) => {
     const products = await getProduct();
     products.forEach((product) => {
       const productDiv = document.createElement("div");
+      productDiv.classList.add("product-div");
       productDiv.innerHTML = renderProduct(product);
       productListing.appendChild(productDiv);
     });

@@ -4,62 +4,96 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Create products</title>
+    <link rel="stylesheet" href="/stylesheet/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
-    <form method="post" id="create-product-form">
-      <h3>Tell us about your new product</h3>
-      <div class="form-row">
-        <label for="productname">Product name</label>
-        <input
-          type="text"
-          id="productname"
-          name="productname"
-          minlength="4"
-          required
-        />
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="box">
+            <h2>Wallah!</h2>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="box">
+            <h3>Sell, buy and connect</h3>
+          </div>
+        </div>
       </div>
+    </div>
+    <div class="container w-75">
+      <div class="row">
+        <div class="col">
+          <div class="box">
+            <h3>Tell us about your new product</h3>
+          </div>
+        </div>
+      </div>
+      <form method="post" id="create-product-form">
+        <div class="form-row d-flex justify-content-between p-5">
+          <label for="productname" id="productname">Product name</label>
+          <input
+            type="text"
+            id="productname"
+            name="productname"
+            minlength="4"
+            required
+          />
+        </div>
 
-      <div class="form-row">
-        <label for="productimage">Images</label>
-        <input
-          type="text"
-          id="productimage"
-          name="productimage"
-          minlength="4"
-        />
-      </div>
+        <div class="form-row d-flex justify-content-between p-5">
+          <label for="productimage">Images</label>
+          <input
+            type="text"
+            id="productimage"
+            name="productimage"
+            minlength="4"
+          />
+        </div>
 
-      <div>
-        <label for="productdescription">Description</label>
-        <textarea
-          name="productdescription"
-          id="productdescription"
-          cols="30"
-          rows="10"
-          required
-        ></textarea>
-      </div>
-      <div>
-        <label for="productprice">Price</label>
-        <input
-          type="number"
-          id="productprice"
-          name="productprice"
-          min="0"
-          max="100000"
-          required
-        />
-      </div>
-      <div>
-        <label for="trade-in">Selling or Buying</label>
-        <select name="trade-in" id="trade-in">
-          <option value="sell">I want to sell</option>
-          <option value="buy">I want to buy</option>
-        </select>
-      </div>
-      <button type="submit" id="create-product-btn">Submit</button>
-    </form>
+        <div class="form-row d-flex justify-content-between p-5">
+          <label for="productdescription">Description</label>
+          <textarea
+            name="productdescription"
+            id="productdescription"
+            cols="30"
+            rows="10"
+            required
+          ></textarea>
+        </div>
+        <div class="form-row d-flex justify-content-between p-5">
+          <label for="productprice">Price</label>
+          <input
+            type="number"
+            id="productprice"
+            name="productprice"
+            min="0"
+            max="100000"
+            required
+          />
+        </div>
+        <div class="form-row d-flex justify-content-between p-5">
+          <label for="trade-in">Selling or Buying</label>
+          <select name="trade-in" id="trade-in">
+            <option value="sell">I want to sell</option>
+            <option value="buy">I want to buy</option>
+          </select>
+        </div>
+        <button type="submit" id="create-product-btn">Submit</button>
+      </form>
+    </div>
 
     <script type="module" src="./createProduct/index.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

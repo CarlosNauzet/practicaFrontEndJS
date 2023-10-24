@@ -1,0 +1,39 @@
+.product-listing {
+  display: flex;
+  width: 100vw;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.producto {
+  width: 300px;
+  border: 1px solid black;
+  padding: 1rem 2rem;
+}
+a {
+  text-decoration: none;
+}
+
+.namestyle {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.price-state {
+  font-weight: lighter;
+  font-style: italic;
+}
+
+.product-div {
+  background-color: #f7f7f7;
+  width: auto;
+  height: auto;
+  border: 2px solid black;
+  border-radius: 20px;
+  margin: 20px;
+  padding: 10px;
+  float: left;
+}
+
+#create-product-btn {
+}
