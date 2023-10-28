@@ -12,6 +12,7 @@ export const logInController = (logInForm) => {
       alert("User succesfully logged in");
       console.log(token);
       localStorage.setItem("accessToken", token.accessToken);
+      window.location.href = "/";
     } catch (error) {
       alert(error);
     }

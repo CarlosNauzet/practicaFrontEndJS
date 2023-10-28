@@ -10,7 +10,7 @@ export const signUpController = (signUpForm) => {
     try {
       const userData = await signUpUser(userName, password);
       alert("User registered successfully");
-      window.location = "./login.html";
+      window.location.href = "./login.html";
     } catch (error) {
       alert(error);
     }

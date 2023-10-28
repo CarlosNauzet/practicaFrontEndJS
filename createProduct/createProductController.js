@@ -1,6 +1,10 @@
 import { createProduct } from "./createProductModel.js";
 
 export const createProductController = (createProductForm) => {
+  const accessToken = localStorage.getItem("accessToken");
+  if (!accessToken) {
+    window.location.href = "/";
+  }
   createProductForm.addEventListener("submit", async (event) => {
     event.preventDefault();
     const productData = new FormData(createProductForm);

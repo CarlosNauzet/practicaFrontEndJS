@@ -8,3 +8,5 @@ export const getProduct = async (id) => {
     throw error;
   }
 };
+
+// crear una función que se llame delete product que vaya al back con el metedo delete para que el producto con el ID
