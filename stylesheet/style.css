@@ -17,11 +17,13 @@ a {
 .namestyle {
   font-weight: bold;
   text-transform: uppercase;
+  text-decoration: none;
 }
 
 .price-state {
   font-weight: lighter;
   font-style: italic;
+  text-decoration: none;
 }
 
 .product-div {
@@ -36,4 +38,16 @@ a {
 }
 
 #create-product-btn {
+}
+
+#products-links {
+  background-color: red;
+  text-decoration: none;
+}
+
+.product-detail-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
