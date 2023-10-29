@@ -1,3 +1,4 @@
+import { dispatchCustomEvent } from "../utils/customEvent.js";
 import { createProduct } from "./createProductModel.js";
 
 export const createProductController = (createProductForm) => {
@@ -16,6 +17,7 @@ export const createProductController = (createProductForm) => {
     const accessToken = localStorage.getItem("accessToken");
 
     try {
+      dispatchCustomEvent("createProductStarted", createProductForm);
       const productData = await createProduct(
         productname,
         productimage,
@@ -28,6 +30,8 @@ export const createProductController = (createProductForm) => {
       alert("Product created succesfully");
     } catch (error) {
       alert(error);
+    } finally {
+      dispatchCustomEvent("createProductEnded", createProductForm);
     }
   });
 };

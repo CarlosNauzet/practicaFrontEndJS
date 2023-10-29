@@ -1,8 +1,10 @@
+import { dispatchCustomEvent } from "../utils/customEvent.js";
 import { getProduct } from "./productListingModel.js";
 import { renderProduct } from "./productListingView.js";
 
 export const productListingController = async (productListing) => {
   try {
+    dispatchCustomEvent("productListingStarted", productListing);
     const products = await getProduct();
     products.forEach((product) => {
       const productDiv = document.createElement("div");
@@ -12,5 +14,7 @@ export const productListingController = async (productListing) => {
     });
   } catch (error) {
     alert(error);
+  } finally {
+    dispatchCustomEvent("productListingEnded", productListing);
   }
 };

@@ -1,3 +1,4 @@
+import { dispatchCustomEvent } from "../utils/customEvent.js";
 import { decodeToken } from "../utils/decodeToken.js";
 import { deleteProduct, getProduct } from "./productDetailModel.js";
 import { renderProduct } from "./productDetailView.js";
@@ -7,10 +8,13 @@ export const productDetailController = async (productDetail, productId) => {
   const user = decodeToken(accessToken);
   let product;
   try {
+    dispatchCustomEvent("getProductStarted", productDetail);
     product = await getProduct(productId);
   } catch (error) {
     alert(error);
     window.location.href = "./index.html";
+  } finally {
+    dispatchCustomEvent("getProductEnded", productDetail);
   }
 
   const productDiv = document.createElement("div");
@@ -23,12 +27,15 @@ export const productDetailController = async (productDetail, productId) => {
     productDetail.appendChild(deleteBtn);
     deleteBtn.addEventListener("click", async () => {
       try {
+        dispatchCustomEvent("deleteStarted", productDetail);
         await deleteProduct(productId, accessToken);
         window.location.href = "./index.html";
         alert("Product deleted succesfully");
       } catch (error) {
         alert(error);
         window.location.href = "./index.html";
+      } finally {
+        dispatchCustomEvent("deleteEnded");
       }
     });
   }

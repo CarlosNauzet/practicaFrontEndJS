@@ -55,3 +55,24 @@ a {
 img {
   width: 100%;
 }
+
+/*loader */
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loader {
+  width: 6rem;
+  height: 6rem;
+  border: 5px solid #8e23cc;
+  border-radius: 50%;
+  border-top-color: #481de0;
+  animation: spinner 0.6s linear infinite;
+}
+
+.loader {
+  margin: 0 auto;
+}

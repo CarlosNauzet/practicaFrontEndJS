@@ -1,3 +1,4 @@
+import { dispatchCustomEvent } from "../utils/customEvent.js";
 import { signUpUser } from "./signUpModel.js";
 
 export const signUpController = (signUpForm) => {
@@ -8,11 +9,14 @@ export const signUpController = (signUpForm) => {
     const password = formData.get("password");
 
     try {
+      dispatchCustomEvent("signupStarted", signUpForm);
       const userData = await signUpUser(userName, password);
       window.location.href = "./login.html";
       alert("User registered successfully");
     } catch (error) {
       alert(error);
+    } finally {
+      dispatchCustomEvent("signupEnded", signUpForm);
     }
   });
 };

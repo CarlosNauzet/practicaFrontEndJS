@@ -1,3 +1,4 @@
+import { dispatchCustomEvent } from "../utils/customEvent.js";
 import { logInUser } from "./logInModel.js";
 
 export const logInController = (logInForm) => {
@@ -8,6 +9,8 @@ export const logInController = (logInForm) => {
     const password = formData.get("password");
 
     try {
+      // 4. lanzo evento para mostrar el loader
+      dispatchCustomEvent("loginStarted", logInForm);
       const token = await logInUser(userName, password);
       alert("User succesfully logged in");
       console.log(token);
@@ -15,6 +18,9 @@ export const logInController = (logInForm) => {
       window.location.href = "/";
     } catch (error) {
       alert(error);
+      // 5. lanzo evento para ocultar el loader
+    } finally {
+      dispatchCustomEvent("loginEnded", logInForm);
     }
   });
 };
