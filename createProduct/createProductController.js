@@ -24,8 +24,8 @@ export const createProductController = (createProductForm) => {
         tradeIn,
         accessToken
       );
-      alert("Product created succesfully");
       window.location.href = "/";
+      alert("Product created succesfully");
     } catch (error) {
       alert(error);
     }
