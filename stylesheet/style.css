@@ -28,7 +28,7 @@ a {
 
 .product-div {
   background-color: #f7f7f7;
-  width: auto;
+  width: 320px;
   height: auto;
   border: 2px solid black;
   border-radius: 20px;
@@ -50,4 +50,8 @@ a {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+img {
+  width: 100%;
 }
